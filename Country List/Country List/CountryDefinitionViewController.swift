@@ -13,19 +13,13 @@ class CountryDefinitionViewController: UIViewController {
     
     @IBOutlet weak var countryDefinitionLabel: UILabel!
     
-    var country = "🇨🇦";
+    var country = Country();
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        bigFlagLabel.text = country;
-        
-        let flags = ["Brazil": "🇨🇬", "Pirate": "🏴", "USA": "🇺🇸", "Portuguese": "🇵🇹","Russia": "🇷🇺"];
-        for (countryName, flag) in flags {
-            if country == flag {
-                countryDefinitionLabel.text = countryName;
-            }
-        }
+        bigFlagLabel.text = country.flag;
+        countryDefinitionLabel.text = country.name;
     }
 
 
