@@ -19,6 +19,7 @@
 		C69956F72687756D009CE2C4 /* BlogEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69956F62687756D009CE2C4 /* BlogEntryViewController.swift */; };
 		C69956FA26877D6D009CE2C4 /* BlogEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69956F826877D6D009CE2C4 /* BlogEntry+CoreDataClass.swift */; };
 		C69956FB26877D6D009CE2C4 /* BlogEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69956F926877D6D009CE2C4 /* BlogEntry+CoreDataProperties.swift */; };
+		C69956FD2687B6EE009CE2C4 /* BlogEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69956FC2687B6ED009CE2C4 /* BlogEntryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C69956F62687756D009CE2C4 /* BlogEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntryViewController.swift; sourceTree = "<group>"; };
 		C69956F826877D6D009CE2C4 /* BlogEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlogEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C69956F926877D6D009CE2C4 /* BlogEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlogEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C69956FC2687B6ED009CE2C4 /* BlogEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				C69956C826876846009CE2C4 /* My_Daily_Blog.xcdatamodeld */,
 				C69956F426877521009CE2C4 /* BlogEntriesTableViewController.swift */,
 				C69956F62687756D009CE2C4 /* BlogEntryViewController.swift */,
+				C69956FC2687B6ED009CE2C4 /* BlogEntryTableViewCell.swift */,
 			);
 			path = "My Daily Blog";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69956FD2687B6EE009CE2C4 /* BlogEntryTableViewCell.swift in Sources */,
 				C69956FA26877D6D009CE2C4 /* BlogEntry+CoreDataClass.swift in Sources */,
 				C69956CA26876846009CE2C4 /* My_Daily_Blog.xcdatamodeld in Sources */,
 				C69956FB26877D6D009CE2C4 /* BlogEntry+CoreDataProperties.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class BlogEntriesTableViewController: UITableViewController {
     var blogEntries: [BlogEntry] = [];
@@ -18,7 +19,10 @@ class BlogEntriesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            if let dataFromCoreDara = try? context.fetch(BlogEntry.fetchRequest()) as? [BlogEntry] {
+            let request: NSFetchRequest<BlogEntry> = BlogEntry.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key:"date", ascending: false)]
+            
+            if let dataFromCoreDara = try? context.fetch(request) as? [BlogEntry] {
                 blogEntries = dataFromCoreDara;
                 self.tableView.reloadData();
             }
@@ -30,16 +34,32 @@ class BlogEntriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = UITableViewCell();
-        let blogEntry = blogEntries[indexPath.row];
-        
-        row.textLabel?.text = blogEntry.content;
+        if let row = tableView.dequeueReusableCell(withIdentifier: "entryRow") as? BlogEntryTableViewCell {
+            let blogEntry = blogEntries[indexPath.row];
+            row.entryContentLabel.text = blogEntry.content;
+            row.monthTag.text = blogEntry.setMonth();
+            row.dayTag.text = blogEntry.setDay();
 
-        return row;
+            return row;
+        } else {
+            return UITableViewCell();
+        }
+
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let blogEntry = blogEntries[indexPath.row];
+        performSegue(withIdentifier: "onEntrySegue", sender: blogEntry)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90;
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let entryViewController = segue.destination as? BlogEntryViewController {
-
+            if let onEntrySubmit = sender as? BlogEntry {
+                entryViewController.blogEntry = onEntrySubmit;
+            }
         }
     }
 
