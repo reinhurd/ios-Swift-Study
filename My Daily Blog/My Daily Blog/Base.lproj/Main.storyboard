@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAa-u6-ZKX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blog Entries Table View Controller-->
+        <scene sceneID="DdZ-dV-UPZ">
+            <objects>
+                <tableViewController id="I7E-Zc-8Z4" customClass="BlogEntriesTableViewController" customModule="My_Daily_Blog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JeQ-Tt-1i4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F8h-dr-OjP">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F8h-dr-OjP" id="tWz-vR-leW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I7E-Zc-8Z4" id="TF9-QR-Jd7"/>
+                            <outlet property="delegate" destination="I7E-Zc-8Z4" id="WsA-Fs-RYA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bYk-mM-Jpe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="yBi-Zj-DSu">
+                            <connections>
+                                <segue destination="yhY-3k-0eG" kind="show" id="mGj-bh-QMT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcH-ua-SFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="631.8840579710145" y="24.776785714285712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S2Y-Pe-3zO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jAa-u6-ZKX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qRe-hq-ZtL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I7E-Zc-8Z4" kind="relationship" relationship="rootViewController" id="FlG-VW-4fZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDl-2o-7oq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278.26086956521743" y="24.776785714285712"/>
+        </scene>
+        <!--Blog App-->
+        <scene sceneID="KP3-Hu-wXY">
+            <objects>
+                <viewController id="yhY-3k-0eG" customClass="BlogEntryViewController" customModule="My_Daily_Blog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tmG-d7-oRp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="tOj-c0-ZZs">
+                                <rect key="frame" x="47" y="113" width="320" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Rkj-70-RaB"/>
+                                </constraints>
+                            </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pki-PY-sTv">
+                                <rect key="frame" x="25" y="213" width="364" height="624"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kTL-4q-q7Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tOj-c0-ZZs" firstAttribute="centerX" secondItem="tmG-d7-oRp" secondAttribute="centerX" id="ART-8P-IZr"/>
+                            <constraint firstItem="tOj-c0-ZZs" firstAttribute="top" secondItem="kTL-4q-q7Y" secondAttribute="top" constant="25" id="I8L-oN-aIs"/>
+                            <constraint firstItem="kTL-4q-q7Y" firstAttribute="bottom" secondItem="Pki-PY-sTv" secondAttribute="bottom" constant="25" id="Z4W-Zm-fIg"/>
+                            <constraint firstItem="Pki-PY-sTv" firstAttribute="top" secondItem="tOj-c0-ZZs" secondAttribute="bottom" constant="25" id="fda-bj-MJR"/>
+                            <constraint firstItem="kTL-4q-q7Y" firstAttribute="trailing" secondItem="Pki-PY-sTv" secondAttribute="trailing" constant="25" id="hag-hB-1ny"/>
+                            <constraint firstItem="Pki-PY-sTv" firstAttribute="leading" secondItem="kTL-4q-q7Y" secondAttribute="leading" constant="25" id="iLA-ce-V8D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Blog App" id="wgW-vc-rCa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Xwa-M4-QvL">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="blogEntryTextView" destination="Pki-PY-sTv" id="SKG-TG-zU2"/>
+                        <outlet property="datePicker" destination="tOj-c0-ZZs" id="4qx-3e-FFY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUf-6a-Whl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1546" y="25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
